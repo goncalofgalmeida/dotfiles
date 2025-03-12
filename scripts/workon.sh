@@ -12,6 +12,7 @@ ENDCOLOR="\e[0m"
 FORTYTWO_PROJECTS_DIR="$HOME/42/common-core/projects"
 ODIN_PROJECTS_DIR="$HOME/workshop"
 MINITALK_DIR="$FORTYTWO_PROJECTS_DIR/minitalk"
+SO_LONG_DIR="$FORTYTWO_PROJECTS_DIR/so_long"
 LIBRARY_DIR="$ODIN_PROJECTS_DIR/library"
 
 # Prompt user
@@ -19,8 +20,9 @@ printf "${MAGENTA}Welcome back.${ENDCOLOR}\n"
 printf "${MAGENTA}What project will you be working on today?${ENDCOLOR}\n"
 printf "\n"
 printf "${GREEN}(1)${ENDCOLOR} Minitalk\n"
-printf "${GREEN}(2)${ENDCOLOR} Library\n"
-printf "${GREEN}(3)${ENDCOLOR} A new project\n"
+printf "${GREEN}(2)${ENDCOLOR} So_long\n"
+printf "${GREEN}(3)${ENDCOLOR} Library\n"
+printf "${GREEN}(4)${ENDCOLOR} A new project\n"
 printf "${GREEN}(q)${ENDCOLOR} None for now, thanks\n"
 printf "\n"
 printf "Enter your choice: "
@@ -31,9 +33,12 @@ case $choice in
         cd "$MINITALK_DIR" && code .
         ;;
     2)
-        cd "$LIBRARY_DIR" && code .
+        cd "$SO_LONG_DIR" && code .
         ;;
     3)
+        cd "$LIBRARY_DIR" && code .
+        ;;
+    4)
 		printf "${MAGENTA}\nWill this project be part of?${ENDCOLOR}\n"
 		printf "${GREEN}(1)${ENDCOLOR} 42\n"
 		printf "${GREEN}(2)${ENDCOLOR} The Odin Project\n"
