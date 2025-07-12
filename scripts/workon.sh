@@ -10,18 +10,19 @@ ENDCOLOR="\e[0m"
 
 # Define project paths
 FORTYTWO_PROJECTS_DIR="$HOME/42/common-core/projects"
-ODIN_PROJECTS_DIR="$HOME/workshop"
+ODIN_PROJECTS_DIR="$HOME/workshop/odin"
+BOOT_DOT_DEV_DIR="$HOME/workshop/boot"
+
 MINITALK_DIR="$FORTYTWO_PROJECTS_DIR/minitalk"
-SO_LONG_DIR="$FORTYTWO_PROJECTS_DIR/so_long"
-LIBRARY_DIR="$ODIN_PROJECTS_DIR/library"
+PUSH_SWAP_DIR="$FORTYTWO_PROJECTS_DIR/push-swap"
 
 # Prompt user
 printf "${MAGENTA}Welcome back.${ENDCOLOR}\n"
 printf "${MAGENTA}What project will you be working on today?${ENDCOLOR}\n"
 printf "\n"
 printf "${GREEN}(1)${ENDCOLOR} Minitalk\n"
-printf "${GREEN}(2)${ENDCOLOR} So_long\n"
-printf "${GREEN}(3)${ENDCOLOR} Library\n"
+printf "${GREEN}(2)${ENDCOLOR} Push-swap\n"
+printf "${GREEN}(3)${ENDCOLOR} Other existing project\n"
 printf "${GREEN}(4)${ENDCOLOR} A new project\n"
 printf "${GREEN}(q)${ENDCOLOR} None for now, thanks\n"
 printf "\n"
@@ -33,15 +34,41 @@ case $choice in
         cd "$MINITALK_DIR" && code .
         ;;
     2)
-        cd "$SO_LONG_DIR" && code .
+        cd "$PUSH_SWAP_DIR" && code .
         ;;
     3)
-        cd "$LIBRARY_DIR" && code .
+        printf "${MAGENTA}\nIs this project part of:${ENDCOLOR}\n"
+		printf "${GREEN}(1)${ENDCOLOR} 42\n"
+		printf "${GREEN}(2)${ENDCOLOR} The Odin Project\n"
+		printf "${GREEN}(3)${ENDCOLOR} Boot.dev\n"
+		printf "\n"
+		printf "Enter your choice: "
+		read selected_dir
+		case $selected_dir in
+			1)
+				selected_dir="$FORTYTWO_PROJECTS_DIR"
+				;;
+			2)
+				selected_dir="$ODIN_PROJECTS_DIR"
+				;;
+			3)
+				selected_dir="$BOOT_DOT_DEV_DIR"
+				;;
+			*)
+				printf "\nInvalid choice. Exiting.\n"
+				exit 1
+				;;
+		esac
+		printf "\n"
+		printf "${MAGENTA}Entering selected directory: $selected_dir${ENDCOLOR}\n"
+		printf "\n"
+        cd "$selected_dir"
         ;;
     4)
 		printf "${MAGENTA}\nWill this project be part of?${ENDCOLOR}\n"
 		printf "${GREEN}(1)${ENDCOLOR} 42\n"
 		printf "${GREEN}(2)${ENDCOLOR} The Odin Project\n"
+		printf "${GREEN}(3)${ENDCOLOR} Boot.dev\n"
 		printf "\n"
 		printf "Enter your choice: "
 		read new_project_dir
@@ -52,6 +79,9 @@ case $choice in
 			2)
 				TARGET_DIR="$ODIN_PROJECTS_DIR"
 				;;
+			3)
+				TARGET_DIR="$BOOT_DOT_DEV_DIR"
+                                ;;
 			*)
 				printf "\nInvalid choice. Exiting.\n"
 				exit 1
