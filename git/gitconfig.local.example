@@ -1,0 +1,11 @@
+# Example of ~/.gitconfig.local — copy to ~/.gitconfig.local and fill in.
+# The committed ~/.gitconfig pulls this in via [include] so personal info
+# stays out of the repo.
+#
+# `setup-mac.sh` will create ~/.gitconfig.local for you by prompting for
+# name + email on first run — this example is just for reference, or for
+# when you want to add things the script doesn't prompt for.
+
+[user]
+    name  = Your Name
+    email = you@example.com

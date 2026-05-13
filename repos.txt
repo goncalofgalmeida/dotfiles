@@ -1,0 +1,19 @@
+# Repos to clone on a new Mac.
+#
+# Format: one SSH URL per line. Lines starting with `#` and blank lines are ignored.
+# Group with comment headers so you can quickly see what's what.
+#
+# To clone everything in this file into ~/ujet (creating it if missing):
+#
+#   mkdir -p ~/ujet
+#   grep -Ev '^\s*(#|$)' ~/dotfiles/repos.txt | \
+#     xargs -L1 -I{} git -C ~/ujet clone {}
+#
+# To clone only the work group, filter on the section comment beforehand.
+
+# --- Work ---------------------------------------------------------
+# git@github.com:ujet/ujet-local-dev.git
+# git@github.com:UJET/ujet-qa-e2e.git
+
+# --- Personal -----------------------------------------------------
+# git@github.com:goncalofgalmeida/dotfiles.git

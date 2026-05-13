@@ -1,0 +1,22 @@
+# Example of ~/.zshrc.local — copy to ~/.zshrc.local on the machine that needs it.
+# Sourced at the very end of ~/.zshrc, so anything here overrides committed config.
+#
+# Use this file for things that shouldn't be committed:
+#   - Secrets / tokens
+#   - Machine-specific PATH additions
+#   - Per-machine env vars (e.g. AWS_PROFILE)
+#   - Aliases that only make sense on one machine
+
+# --- PATH additions -----------------------------------------------
+# export PATH="$HOME/.local/bin:$PATH"
+
+# --- Environment --------------------------------------------------
+# export EDITOR="code --wait"
+# export AWS_PROFILE="work"
+# export OPENAI_API_KEY="sk-..."
+
+# --- Machine-specific aliases -------------------------------------
+# alias work='cd ~/ujet'
+
+# --- Tool init that only applies to this machine ------------------
+# eval "$(direnv hook zsh)"

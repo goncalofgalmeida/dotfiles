@@ -1,0 +1,20 @@
+# macOS noise
+.DS_Store
+._*
+.AppleDouble
+.LSOverride
+.Spotlight-V100
+.Trashes
+
+# Editor swap / backup files
+*.swp
+*.swo
+*~
+.netrwhist
+
+# direnv
+.envrc
+.direnv/
+
+# Claude Code per-project local overrides
+.claude/settings.local.json
