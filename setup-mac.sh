@@ -40,8 +40,8 @@ ensure_homebrew() {
   if command -v brew &>/dev/null; then
     log "Homebrew already installed."
   else
-    log "Installing Homebrew..."
-    NONINTERACTIVE=1 /bin/bash -c \
+    log "Installing Homebrew (will prompt for your password)..."
+    /bin/bash -c \
       "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   fi
 
